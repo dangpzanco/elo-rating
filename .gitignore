@@ -1,3 +1,55 @@
+############# Begin Custom Rules
+
+# Data containers
+*.npy
+*.npz
+*.cpickle
+*.pkl
+*.h5
+*.7z
+
+# Experiment data
+*.experiment
+events.out.tfevents.*
+*.ckpt
+
+# Zarr Data container
+.zgroup
+.zattrs
+.zarray
+*.[0-9]
+[0-9]*
+
+# Dask worker
+*.lock
+*.dirlock
+
+# Audio files
+*.wav
+*.ogg
+*.mp3
+*.flac
+*.pcm
+
+# VSCode
+.vscode/
+
+# Result files
+*.pdf
+*.png
+*.pgf
+*.eps
+*.csv
+*.tar*
+
+# Local dataset folder
+/dataset/*
+
+# Trained models
+/saved_models
+
+############# End Custom Rules
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
