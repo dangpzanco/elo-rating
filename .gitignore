@@ -42,8 +42,9 @@ events.out.tfevents.*
 *.csv
 *.tar*
 
-# Local dataset folder
-/dataset/*
+# Local backup
+/bak/*
+/extra/*
 
 # Trained models
 /saved_models
