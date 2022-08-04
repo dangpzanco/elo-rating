@@ -532,7 +532,7 @@ if __name__ == '__main__':
 
         config = dict(
             sgd=exp_config,
-            out_folder=r'/home/daniel/data/Datasets/simulations/results_torch',
+            out_folder=r'~/data/Datasets/simulations/results_torch',
             name=f'v={v[i]},hfa={hfa}'
         )
 
