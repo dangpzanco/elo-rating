@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 
 import model_utils as mutils
-import linse_utils as lutils
+import plot_utils as lutils
 
 
 # Figure 1

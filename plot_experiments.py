@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 import data_utils as dutils
 import model_utils as mutils
-import linse_utils as lutils
+import plot_utils as lutils
 
 import matplotlib.pyplot as plt
 from scipy import signal
