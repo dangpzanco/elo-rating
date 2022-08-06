@@ -30,7 +30,7 @@ wget https://anonymous.4open.science/api/repo/elo-rating-CD35/file/webscrape_csv
 - Create a new Conda environment. In the case Conda is not installed, I suggest using the [Miniconda](https://docs.conda.io/en/latest/miniconda.html) distribution.
 
 ```bash
-conda env create -n elo -f environment.yml;
+conda env create -n elo -f environment.yml
 conda activate elo
 ```
 
