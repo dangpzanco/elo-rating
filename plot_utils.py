@@ -158,13 +158,13 @@ def save_fig(fig, name, path=None, format=None, dpi=600, close=False, usetex=Tru
     backend = 'pgf' if usetex else None
     if 'pdf' in format:
         # fig.savefig(path / f'{name}.pdf', format='pdf', backend=backend)
-        fig.savefig(path / f'{name}.pdf', format='pdf')
+        fig.savefig(path / f'{name}.pdf', format='pdf', transparent=True)
     if 'eps' in format: # no support for pgf backend in eps
-        fig.savefig(path / f'{name}.eps', format='eps')
+        fig.savefig(path / f'{name}.eps', format='eps', transparent=True)
     if usetex and ('pgf' in format):
-        fig.savefig(path / f'{name}.pgf', format='pgf')
+        fig.savefig(path / f'{name}.pgf', format='pgf', transparent=True)
     if 'png' in format:
-        fig.savefig(path / f'{name}.png', format='png', dpi=dpi, backend=backend)
+        fig.savefig(path / f'{name}.png', format='png', transparent=True, dpi=dpi, backend=backend)
 
     if close:
         plt.close(fig)
