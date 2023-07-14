@@ -27,13 +27,14 @@ mpl.rcParams['ps.fonttype'] = 42
 
 # Easy 10-color list
 color_list = list(mcolors.TABLEAU_COLORS)
+linestyle_list = ['-', '-.', '--', ':']
 
 # Requires a distribution of LaTeX installed (tested with MiKTeX on Windows 10)
 mpl.rcParams['text.usetex'] = True
 mpl.rcParams['pgf.texsystem'] = "xelatex"
-preamble = "\n".join(
-    [r"\usepackage{amsmath}"])
-mpl.rcParams['text.latex.preamble'] = preamble
+# preamble = "\n".join([r"\usepackage{amsmath}"])
+preamble = r'\input{pdfa.tex}'
+# mpl.rcParams['text.latex.preamble'] = preamble
 mpl.rcParams['pgf.preamble'] = preamble
 
 

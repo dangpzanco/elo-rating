@@ -294,7 +294,8 @@ def plot_steady(
         ax.plot(lr, model[name].mean(axis=0), ls='--', color='k')
 
         for j in range(lr_list.size):
-            ax.axvline(lr_list[j], color=lutils.color_list[j], ls='--')
+            # ax.axvline(lr_list[j], color=lutils.color_list[j], ls='--')
+            ax.axvline(lr_list[j], color='k', ls=lutils.linestyle_list[j])
 
         if name == 'msd':
             ax.set_yscale('log')
@@ -357,7 +358,7 @@ beta0 = 2 * (beta_o1 * v).sum() / v.sum()
 beta_ok = mutils.optimal_beta_k(
     df.v, df.players, df.games // 4, hfa=df.hfa).values
 
-beta_elo = 0.03
+beta_elo = 0.1
 beta = [beta_elo, beta_ok.mean(), beta_improv.mean()]
 
 print('β values:', beta)
