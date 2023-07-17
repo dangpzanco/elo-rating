@@ -84,6 +84,7 @@ def plot_season_teams(
         # ax.axvline(tau_plot, color='k', ls='--')
         ax.set_xlabel(xylabel['x'])
         ax.set_ylabel(xylabel['y'])
+        ax.grid(True)
 
         fig.tight_layout()
 
@@ -158,6 +159,7 @@ def plot_season_metric(
         # ax.axvline(tau_plot, color='k', ls='--')
         ax.set_xlabel(xylabel['x'])
         ax.set_ylabel(xylabel['y'])
+        ax.grid(True)
 
         fig.tight_layout()
 
@@ -230,6 +232,7 @@ def plot_metrics(
         fig, ax = plt.subplots(figsize=(10, 7))
         ax.plot(exp_plot, color='gray', ls='-')
         ax.plot(model_plot, color='k', ls='--')
+        ax.grid(True)
 
         # if name == 'loss':
         #     filter_data = mean_filter(exp_plot, p=10)
@@ -292,6 +295,7 @@ def plot_steady(
         fig, ax = plt.subplots(figsize=(10, 7))
         ax.plot(lr, exp[name].mean(axis=0), color='gray')
         ax.plot(lr, model[name].mean(axis=0), ls='--', color='k')
+        ax.grid(True)
 
         for j in range(lr_list.size):
             # ax.axvline(lr_list[j], color=lutils.color_list[j], ls='--')

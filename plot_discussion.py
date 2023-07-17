@@ -32,6 +32,7 @@ def plot_tau(
 
     ax.plot(beta, tau1, label=r"$\tau_1$")
     ax.plot(beta, tau2, label=r"$\tau_2$")
+    ax.grid(True)
 
     ax.legend()
     ax.set_xscale('log')
@@ -79,6 +80,7 @@ def plot_lmin(num_points=1000, hfa_values=None, lang='en', path='figures/discuss
     lmin_inf = f_l / np.sqrt(v_z / v_l)
     # _, _, lmin_inf = mutils.analytical_expectations(v + 4 * np.log(2), 0)
     ax.plot(v, lmin_inf, ls='--', color='k')
+    ax.grid(True)
 
     ax.set_xscale('log')
     ax.set_yscale('log')
@@ -124,6 +126,7 @@ def plot_lex(
         lex = d_k * h / (M-1)
         ax.plot(beta, lex, label=f'$k = {round(K)}$')
     ax.plot(beta, l_inf, label=r'$k \to \infty$', color='k')
+    ax.grid(True)
 
     ax.set_xscale('log')
     ax.axis([None, None, 0, 0.6])
@@ -153,6 +156,8 @@ def plot_improvement(num_v=1000, M=15, lang='en', path='figures/discussion'):
 
     beta = mutils.improvement_condition(v, M, hfa=0)
     ax.plot(v, beta, color='k')
+    ax.grid(True)
+
     ax.autoscale(tight=True)
     ax.axis([None, None, v.min(), 5])
     ax.set_xscale('log')
@@ -194,6 +199,7 @@ def plot_optbeta(M=15, v=None, hfa=0, lang='en', path='figures/discussion'):
 
         beta_approx = mutils.optimal_beta_k(v[i], M, k, hfa=hfa)
         ax.plot(k, beta_approx, color=lutils.color_list[i], ls='--')
+    ax.grid(True)
 
     ax.legend(borderaxespad=1.2, loc='lower left')
     ax.autoscale(tight=True, axis='x')
@@ -237,6 +243,7 @@ def plot_appendix(M=15, v=None, hfa=0, lang='en', path='figures/discussion'):
         beta_approx = mutils.optimal_beta_k(
             v[i], M, k, hfa=hfa, method='taylor')
         ax.plot(k, beta_approx, color=lutils.color_list[i], ls='--')
+    ax.grid(True)
 
     ax.legend(loc='upper right')
     ax.autoscale(tight=True, axis='x')
