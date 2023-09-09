@@ -245,8 +245,13 @@ class SuperLegaRatings():
             shuffle_vec=games
         )
         theta_star = self.group.theta_star[:]
+        # theta_error = (exp_theta - theta_star[None, ])
+        # exp_msd = theta_error.var(ddof=1, axis=-1) * (num_players - 1)
+
+        # Make sure that the first element is theta0
+        exp_theta = np.vstack((theta0, exp_theta[:-1,]))
         theta_error = (exp_theta - theta_star[None, ])
-        exp_msd = theta_error.var(ddof=1, axis=-1) * (num_players - 1)
+        exp_msd = theta_error.var(ddof=1, axis=-1) * num_players
 
         # Generate learning curve from stochastic model (with estimated hfa)
         model_theta = mutils.theta_expectation(theta_star, theta0, eta, num_games, hfa=hfa)
@@ -396,8 +401,9 @@ class SuperLegaRatings():
                 hfa=hfa,
                 shuffle_vec=games
             )
+            theta_temp = np.vstack((theta0, theta_temp[:-1,]))
             theta_error = (theta_temp - theta_star[None, ])
-            exp_msd[i, ] = theta_error.var(ddof=1, axis=-1) * (num_players - 1)
+            exp_msd[i, ] = theta_error.var(ddof=1, axis=-1) * num_players
 
         model_msd = mutils.var_expectation(
             lr[:, None], v, num_players, num_games=games[None, :], hfa=hfa)
