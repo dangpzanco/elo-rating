@@ -90,14 +90,15 @@ def plot_season_teams(
 
         # Add extra ticks
         ax.autoscale(tight=True)
-        xticks = ax.get_xticks()
-        extra_ticks = np.array([K])
-        new_ticks = []
-        for tick in xticks:
-            if (np.abs(extra_ticks - tick) > 10).all():
-                new_ticks.append(tick)
-        new_ticks.extend(extra_ticks)
-        ax.set_xticks(new_ticks)
+        if False:
+            xticks = ax.get_xticks()
+            extra_ticks = np.array([K])
+            new_ticks = []
+            for tick in xticks:
+                if (np.abs(extra_ticks - tick) > 10).all():
+                    new_ticks.append(tick)
+            new_ticks.extend(extra_ticks)
+            ax.set_xticks(new_ticks)
 
         # texts = []
         # for k in range(sample_players.size):
@@ -166,6 +167,7 @@ def plot_season_metric(
         # Add extra ticks
         ax.autoscale(tight=True, axis='x')
         if False:
+            ax.axis([0, K, None, None])
             xticks = ax.get_xticks()
             extra_ticks = np.array([K])
             new_ticks = []

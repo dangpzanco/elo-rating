@@ -80,8 +80,13 @@ def plot_lmin(num_points=1000, hfa_values=None, lang='en', path='figures/discuss
     lmin_inf = f_l / np.sqrt(v_z / v_l)
     # _, _, lmin_inf = mutils.analytical_expectations(v + 4 * np.log(2), 0)
     ax.plot(v, lmin_inf, ls='--', color='k')
-    ax.grid(True)
 
+    v_th = 2 * np.log(2)
+    ax.axvline(v_th, ls='-', color='k', linewidth=1)
+    # ax.axvline(v_th, ls='-', color='k')
+    ax.text(1.1*v_th, 0.3, r'$v_{\textrm{th}}$')
+
+    ax.grid(True)
     ax.set_xscale('log')
     ax.set_yscale('log')
     ax.axis([None, None, 0.2, 0.8])

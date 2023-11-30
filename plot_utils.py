@@ -145,7 +145,7 @@ def format_figure(
     return fig
 
 
-def save_fig(fig, name, path=None, format=None, dpi=600, close=False, usetex=True, **kwargs):
+def save_fig(fig: Figure, name, path=None, format=None, dpi=600, close=False, usetex=True, **kwargs):
     # Make sure to save on a folder that exists
     if path is None:
         path = 'figures'
